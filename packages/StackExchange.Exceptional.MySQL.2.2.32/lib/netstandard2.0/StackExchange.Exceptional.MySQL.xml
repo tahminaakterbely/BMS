@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StackExchange.Exceptional.MySQL</name>
+    </assembly>
+    <members>
+        <member name="T:StackExchange.Exceptional.Stores.MySQLErrorStore">
+            <summary>
+            An <see cref="T:StackExchange.Exceptional.ErrorStore" /> implementation that uses MySQL as its backing store.
+            </summary>
+        </member>
+        <member name="P:StackExchange.Exceptional.Stores.MySQLErrorStore.Name">
+            <summary>
+            Name for this error store.
+            </summary>
+        </member>
+        <member name="F:StackExchange.Exceptional.Stores.MySQLErrorStore.MaximumDisplayCount">
+            <summary>
+            The maximum count of errors to show.
+            </summary>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:StackExchange.Exceptional.Stores.MySQLErrorStore" /> with the specified connection string.
+            The default table name is "Exceptions".
+            </summary>
+            <param name="connectionString">The database connection string to use.</param>
+            <param name="applicationName">The application name to use when logging.</param>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.#ctor(StackExchange.Exceptional.ErrorStoreSettings)">
+            <summary>
+            Creates a new instance of <see cref="T:StackExchange.Exceptional.Stores.SQLErrorStore"/> with the given configuration.
+            The default table name is "Exceptions".
+            </summary>
+            <param name="settings">The <see cref="T:StackExchange.Exceptional.ErrorStoreSettings"/> for this store.</param>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.ProtectErrorAsync(System.Guid)">
+            <summary>
+            Protects an error from deletion, by making IsProtected = 1 in the database.
+            </summary>
+            <param name="guid">The GUID of the error to protect.</param>
+            <returns><c>true</c> if the error was found and protected, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.ProtectErrorsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Protects errors from deletion, by making IsProtected = 1 in the database.
+            </summary>
+            <param name="guids">The GUIDs of the errors to protect.</param>
+            <returns><c>true</c> if the errors were found and protected, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.DeleteErrorAsync(System.Guid)">
+            <summary>
+            Deletes an error, by setting DeletionDate = UTC_DATE() in SQL.
+            </summary>
+            <param name="guid">The GUID of the error to delete.</param>
+            <returns><c>true</c> if the error was found and deleted, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.DeleteErrorsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Deletes errors, by setting DeletionDate = UTC_DATE() in SQL.
+            </summary>
+            <param name="guids">The GUIDs of the errors to delete.</param>
+            <returns><c>true</c> if the errors were found and deleted, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.HardDeleteErrorAsync(System.Guid)">
+            <summary>
+            Hard deletes an error, actually deletes the row from SQL rather than setting <see cref="P:StackExchange.Exceptional.Error.DeletionDate"/>.
+            This is used to cleanup when testing the error store when attempting to come out of retry/failover mode after losing connection to SQL.
+            </summary>
+            <param name="guid">The GUID of the error to hard delete.</param>
+            <returns><c>true</c> if the error was found and deleted, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.DeleteAllErrorsAsync(System.String)">
+            <summary>
+            Deleted all errors in the log, by setting <see cref="P:StackExchange.Exceptional.Error.DeletionDate"/> = UTC_DATE() in SQL.
+            </summary>
+            <param name="applicationName">The name of the application to delete all errors for.</param>
+            <returns><c>true</c> if any errors were deleted, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.LogError(StackExchange.Exceptional.Error)">
+            <summary>
+            Logs the error to SQL.
+            If the roll-up conditions are met, then the matching error will have a 
+            DuplicateCount += @DuplicateCount (usually 1, unless in retry) rather than a distinct new row for the error.
+            </summary>
+            <param name="error">The error to log.</param>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.LogErrorAsync(StackExchange.Exceptional.Error)">
+            <summary>
+            Asynchronously logs the error to SQL.
+            If the roll-up conditions are met, then the matching error will have a 
+            DuplicateCount += @DuplicateCount (usually 1, unless in retry) rather than a distinct new row for the error.
+            </summary>
+            <param name="error">The error to log.</param>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.GetErrorAsync(System.Guid)">
+            <summary>
+            Gets the error with the specified GUID from SQL.
+            This can return a deleted error as well, there's no filter based on <see cref="P:StackExchange.Exceptional.Error.DeletionDate"/>.
+            </summary>
+            <param name="guid">The GUID of the error to retrieve.</param>
+            <returns>The error object if found, <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.GetAllErrorsAsync(System.String)">
+            <summary>
+            Retrieves all non-deleted application errors in the database.
+            </summary>
+            <param name="applicationName">The name of the application to get all errors for.</param>
+        </member>
+        <member name="M:StackExchange.Exceptional.Stores.MySQLErrorStore.GetErrorCountAsync(System.Nullable{System.DateTime},System.String)">
+            <summary>
+            Retrieves a count of application errors since the specified date, or all time if <c>null</c>.
+            </summary>
+            <param name="since">The date to get errors since.</param>
+            <param name="applicationName">The application name to get an error count for.</param>
+        </member>
+    </members>
+</doc>
