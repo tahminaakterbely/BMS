@@ -80,5 +80,17 @@ namespace bbbbbb
             }
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            var m = new Main();
+            m.Show();
+            this.Hide();
+        }
     }
 }

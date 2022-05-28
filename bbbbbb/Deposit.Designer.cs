@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtacc = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtbal = new System.Windows.Forms.Label();
-            this.txtde = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtde = new System.Windows.Forms.Label();
+            this.txtbal = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtacc = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,72 +64,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CashDeposit";
             // 
-            // txtacc
+            // button2
             // 
-            this.txtacc.AutoSize = true;
-            this.txtacc.Location = new System.Drawing.Point(45, 52);
-            this.txtacc.Name = "txtacc";
-            this.txtacc.Size = new System.Drawing.Size(64, 13);
-            this.txtacc.TabIndex = 0;
-            this.txtacc.Text = "Account No";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Data";
-            // 
-            // txtbal
-            // 
-            this.txtbal.AutoSize = true;
-            this.txtbal.Location = new System.Drawing.Point(45, 155);
-            this.txtbal.Name = "txtbal";
-            this.txtbal.Size = new System.Drawing.Size(46, 13);
-            this.txtbal.TabIndex = 1;
-            this.txtbal.Text = "Balance";
-            // 
-            // txtde
-            // 
-            this.txtde.AutoSize = true;
-            this.txtde.Location = new System.Drawing.Point(45, 211);
-            this.txtde.Name = "txtde";
-            this.txtde.Size = new System.Drawing.Size(43, 13);
-            this.txtde.TabIndex = 1;
-            this.txtde.Text = "Deposit";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(149, 41);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 40);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(149, 138);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 41);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(149, 193);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 41);
-            this.textBox3.TabIndex = 2;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 87);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.button2.Location = new System.Drawing.Point(257, 311);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 35);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Deposit";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -139,21 +84,100 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // dateTimePicker1
             // 
-            this.button2.Location = new System.Drawing.Point(257, 311);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Deposit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.dateTimePicker1.Location = new System.Drawing.Point(149, 87);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(149, 193);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(200, 41);
+            this.textBox3.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(149, 138);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(200, 41);
+            this.textBox2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(149, 41);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 40);
+            this.textBox1.TabIndex = 2;
+            // 
+            // txtde
+            // 
+            this.txtde.AutoSize = true;
+            this.txtde.Location = new System.Drawing.Point(45, 211);
+            this.txtde.Name = "txtde";
+            this.txtde.Size = new System.Drawing.Size(43, 13);
+            this.txtde.TabIndex = 1;
+            this.txtde.Text = "Deposit";
+            // 
+            // txtbal
+            // 
+            this.txtbal.AutoSize = true;
+            this.txtbal.Location = new System.Drawing.Point(45, 155);
+            this.txtbal.Name = "txtbal";
+            this.txtbal.Size = new System.Drawing.Size(46, 13);
+            this.txtbal.TabIndex = 1;
+            this.txtbal.Text = "Balance";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Data";
+            // 
+            // txtacc
+            // 
+            this.txtacc.AutoSize = true;
+            this.txtacc.Location = new System.Drawing.Point(45, 52);
+            this.txtacc.Name = "txtacc";
+            this.txtacc.Size = new System.Drawing.Size(64, 13);
+            this.txtacc.TabIndex = 0;
+            this.txtacc.Text = "Account No";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(776, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Home";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(826, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Exit";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Deposit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(878, 543);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Deposit";
@@ -161,6 +185,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -178,5 +203,7 @@
         private System.Windows.Forms.Label txtbal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtacc;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

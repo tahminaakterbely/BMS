@@ -139,5 +139,12 @@ namespace bbbbbb
         {
             Application.Exit();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var m = new Main();
+            m.Show();
+            this.Hide();
+        }
     }
 }
