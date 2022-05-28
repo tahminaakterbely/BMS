@@ -16,7 +16,7 @@ namespace bbbbbb
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AccountCreation());
+            Application.Run(new Transaction ());
         }
     }
 }

@@ -60,3 +60,7 @@ C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\bin\Debug\StackExchange.E
 C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\bin\Debug\StackExchange.Exceptional.Shared.pdb
 C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\bin\Debug\StackExchange.Exceptional.Shared.xml
 C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\obj\Debug\bbbbbb.exe.config
+C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\obj\Debug\bbbbbb.Deposit.resources
+C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\obj\Debug\bbbbbb.Withdraw.resources
+C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\obj\Debug\bbbbbb.transfer.resources
+C:\Users\Tahmina Akter Bely\source\repos\bbbbbb\bbbbbb\obj\Debug\bbbbbb.Transaction.resources

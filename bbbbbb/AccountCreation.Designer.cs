@@ -143,7 +143,6 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(200, 20);
             this.txtemail.TabIndex = 10;
-            this.txtemail.Text = "sabbirahmadratul";
             // 
             // txtphone
             // 
@@ -151,7 +150,6 @@
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(200, 20);
             this.txtphone.TabIndex = 10;
-            this.txtphone.Text = "01725833649";
             // 
             // textBox6
             // 
@@ -159,7 +157,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(200, 20);
             this.textBox6.TabIndex = 10;
-            this.textBox6.Text = "Mymensingh";
             // 
             // txtcity
             // 
@@ -167,7 +164,6 @@
             this.txtcity.Name = "txtcity";
             this.txtcity.Size = new System.Drawing.Size(200, 20);
             this.txtcity.TabIndex = 10;
-            this.txtcity.Text = "Sherpur";
             // 
             // textBox4
             // 
@@ -175,7 +171,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(200, 20);
             this.textBox4.TabIndex = 10;
-            this.textBox4.Text = "Ranishimul";
             // 
             // txtfname
             // 
@@ -183,7 +178,6 @@
             this.txtfname.Name = "txtfname";
             this.txtfname.Size = new System.Drawing.Size(200, 20);
             this.txtfname.TabIndex = 10;
-            this.txtfname.Text = "Rutul";
             // 
             // txtlname
             // 
@@ -191,7 +185,6 @@
             this.txtlname.Name = "txtlname";
             this.txtlname.Size = new System.Drawing.Size(200, 20);
             this.txtlname.TabIndex = 9;
-            this.txtlname.Text = "Sabbir Ahmad";
             // 
             // textBox1
             // 
@@ -316,7 +309,6 @@
             this.txtbal.Name = "txtbal";
             this.txtbal.Size = new System.Drawing.Size(142, 20);
             this.txtbal.TabIndex = 1;
-            this.txtbal.Text = "5000";
             // 
             // txtdes
             // 
@@ -331,7 +323,6 @@
             this.txtacc.Name = "txtacc";
             this.txtacc.Size = new System.Drawing.Size(142, 20);
             this.txtacc.TabIndex = 1;
-            this.txtacc.Text = "1000";
             // 
             // label12
             // 
@@ -409,7 +400,7 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(135)))), ((int)(((byte)(22)))));
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(77, 0);
+            this.button4.Location = new System.Drawing.Point(70, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 1;
@@ -422,7 +413,7 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(239)))), ((int)(((byte)(79)))));
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Location = new System.Drawing.Point(0, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 0;
